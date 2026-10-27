@@ -1,18 +1,21 @@
 <?php
+// api/index.php
 
+$requestUri = $_SERVER['REQUEST_URI'];
 
-declare(strict_types=1);
+// Basic routing example
+if ($requestUri === '/' || $requestUri === '/index.php') {
+    // Include your main application logic or home file
+    echo "Welcome to ABC Academy Site!";
+    exit;
+}
 
-require __DIR__ . '/../public/index.php';
+// Fallback for asset files or other paths
+$file = dirname(__DIR__) . $requestUri;
+if (file_exists($file) && !is_dir($file)) {
+    return false; // Let the built-in server serve the static file directly
+}
 
-
-
-/*
-|--------------------------------------------------------------------------
-| Vercel entry point
-|--------------------------------------------------------------------------
-| Vercel sends application requests to this file. Laravel continues to use
-| its normal public/index.php front controller.
-*/
-
-require __DIR__ . '/../public/index.php';
+// Fallback error
+http_response_code(404);
+echo "404 Not Found";
