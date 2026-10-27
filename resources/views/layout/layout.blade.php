@@ -10,7 +10,7 @@
     <link rel="icon" href="{{asset('favicon.svg')}}" />
 
     <!--CSS Link-->
-    <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 
 
     <!--Plus Jakarta Sans Google Font Link-->
