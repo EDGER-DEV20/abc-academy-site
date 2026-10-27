@@ -11,7 +11,7 @@
 
     <!--CSS Link-->
     <link rel="stylesheet" href="{{asset('css/style.css')}}" />
-    @vite(['resources/css/style.css', 'resources/js/js.js'])
+
 
     <!--Plus Jakarta Sans Google Font Link-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
